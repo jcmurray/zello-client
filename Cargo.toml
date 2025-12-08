@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# SPDX-FileCopyrightText: 2024 John C. Murray
+
+[package]
+name = "zello-client"
+version = "0.2.3"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+authors = ["John  Murray <john@murrayfamily.uk>"]
+
+[dependencies]
+tokio = { version = "1.48", features = ["full"] }
+tokio-tungstenite = { version = "0.28", features = ["native-tls"] }
+tungstenite = "0.28"
+futures-util = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dotenvy = "0.15.7"
+thiserror = "2.0.17"
+anyhow = "1.0.100"
+base64 = "0.22.1"
+bytes = "1.11.0"
+audiopus = "0.3.0-rc.0"
+cpal = "0.16"
+crossbeam-channel = "0.5"
+clap = { version = "4.5.53", features = ["derive"] }
+
+[lib]
+name = "zello_client"
+path = "src/lib.rs"
+
+[[bin]]
+name = "zello-client"
+path = "src/bin/main.rs"
+
+[[example]]
+name = "complete"
+path = "examples/complete.rs"
+
+[[example]]
+name = "simple"
+path = "examples/simple.rs"

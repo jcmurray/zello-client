@@ -1,0 +1,7 @@
+Cargo.lock
+target
+.env
+foo.txt
+src/git_version.txt
+scripts/run_zello.sh
+scripts
