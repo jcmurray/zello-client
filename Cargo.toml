@@ -3,7 +3,7 @@
 
 [package]
 name = "zello-client"
-version = "0.2.6"
+version = "0.2.7"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 authors = ["John  Murray <john@murrayfamily.uk>"]
@@ -15,7 +15,7 @@ categories = ["network-programming"]
 documentation = "https://docs.rs/zello-client"
 
 [dependencies]
-tokio = { version = "1.48", features = ["full"] }[]
+tokio = { version = "1.48", features = ["full"] }
 tokio-tungstenite = { version = "0.28", features = ["native-tls"] }
 tungstenite = "0.28"
 futures-util = "0.3"
