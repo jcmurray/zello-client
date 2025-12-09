@@ -23,10 +23,6 @@ fn main() {
     });
 
     println!("cargo:rustc-env=GIT_VERSION={git_version}");
-
-    if let Err(e) = fs::write(GIT_FILE_NAME, &git_version) {
-        eprintln!("cargo:warning=Failed to write git version file: {e}");
-    }
 }
 
 fn get_git_version() -> io::Result<String> {
