@@ -23,7 +23,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-zello-client = { path = "." }
+zello-client = "0.2.11"
 tokio = { version = "1.48", features = ["full"] }
 ```
 
@@ -78,7 +78,7 @@ You should add the following dependencies to your project's `Cargo.toml`:
 [dependencies]
 anyhow = "1.0.100"
 tokio = "1.48.0"
-zello-client = "0.2.9"
+zello-client = "0.2.11"
 ```
 
 With the following code in your project's `src/main.rs` to run this simple example:
@@ -111,7 +111,7 @@ anyhow = "1.0.100"
 clap = "4.5.53"
 crossbeam-channel = "0.5.15"
 tokio = "1.48.0"
-zello-client = "0.2.9"
+zello-client = "0.2.11"
 ```
 
 With the following code in your project's `src/main.rs` to run this simple example:
