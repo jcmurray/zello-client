@@ -74,7 +74,7 @@ Ensure you modify the `examples/.env.example` file with your credentials.
 
 You can find this example in the `examples` directory of the repository.
 
-```rust
+```rust,no_run
 //! Simple example showing basic Zello client connection
 
 use anyhow::Result;
@@ -98,7 +98,7 @@ async fn main() -> Result<()> {
 
 You can find this example in the `examples` directory of the repository.
 
-```rust
+```rust,no_run
 //! Example Zello client application
 
 use anyhow::Result;
