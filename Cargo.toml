@@ -3,7 +3,7 @@
 
 [package]
 name = "zello-client"
-version = "0.2.9"
+version = "0.2.10"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 authors = ["John  Murray <john@murrayfamily.uk>"]
