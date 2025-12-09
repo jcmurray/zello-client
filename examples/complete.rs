@@ -45,7 +45,6 @@ is using a development API which requires this token.\n\
 This requirement may change in the future when the API is made public."
 )]
 #[command(version = env!("CARGO_PKG_VERSION"))]
-#[command(long_version = concat!(env!("CARGO_PKG_VERSION"), " / ", env!("GIT_VERSION")))]
 struct Args {
     /// Message to send as text message
     #[arg(short = 'm', long)]

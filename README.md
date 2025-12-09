@@ -68,23 +68,30 @@ This requirement may change in the future when this Zello API is made public.
 - A simple example showing basic Zello client connection
 - A more complete example
 
-Ensure you modify the `examples/.env.example` file with your credentials.
+Ensure you provide a `.env` file with your credentials.
 
 ### Simple Example
 
-You can find this example in the `examples` directory of the repository.
+You should add the following dependencies to your project's `Cargo.toml`:
+
+```toml
+[dependencies]
+anyhow = "1.0.100"
+tokio = "1.48.0"
+zello-client = "0.2.9"
+```
+
+With the following code in your project's `src/main.rs` to run this simple example:
 
 ```rust,no_run
-//! Simple example showing basic Zello client connection
-
 use anyhow::Result;
 use zello_client::{
-    connect_to_zello, initialize_logging, load_credentials, utilities::load_dotenv_from_file,
+    connect_to_zello, initialize_logging, load_credentials, utilities::load_dotenv,
 };
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    load_dotenv_from_file("examples/.env.example")?;
+    load_dotenv()?;
     initialize_logging()?;
     let credentials = load_credentials()?;
     let mut client = connect_to_zello(&credentials).await?;
@@ -96,11 +103,20 @@ async fn main() -> Result<()> {
 
 ### A more complete example
 
-You can find this example in the `examples` directory of the repository.
+You should add the following dependencies to your project's `Cargo.toml`:
+
+```toml
+[dependencies]
+anyhow = "1.0.100"
+clap = "4.5.53"
+crossbeam-channel = "0.5.15"
+tokio = "1.48.0"
+zello-client = "0.2.9"
+```
+
+With the following code in your project's `src/main.rs` to run this simple example:
 
 ```rust,no_run
-//! Example Zello client application
-
 use anyhow::Result;
 use clap::Parser;
 use crossbeam_channel::bounded;
@@ -108,7 +124,7 @@ use std::sync::Arc;
 use tokio::sync::Mutex;
 use zello_client::{
     PCM_CHANNEL_CAPACITY, connect_to_zello, create_decoder, initialize_logging, load_credentials,
-    setup_audio_output, utilities::load_dotenv_from_file,
+    setup_audio_output, utilities::load_dotenv,
 };
 
 #[derive(Parser, Debug)]
@@ -135,7 +151,6 @@ is using a development API which requires this token.\n\
 This requirement may change in the future when the API is made public."
 )]
 #[command(version = env!("CARGO_PKG_VERSION"))]
-#[command(long_version = concat!(env!("CARGO_PKG_VERSION"), " / ", env!("GIT_VERSION")))]
 struct Args {
     /// Message to send as text message
     #[arg(short = 'm', long)]
@@ -150,7 +165,7 @@ struct Args {
 async fn main() -> Result<()> {
     let args = Args::parse();
 
-    load_dotenv_from_file("examples/.env.example")?;
+    load_dotenv()?;
     initialize_logging()?;
 
     let credentials = load_credentials()?;
