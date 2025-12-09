@@ -9,9 +9,8 @@
     clippy::missing_panics_doc
 )]
 
-use std::{fs, io, process::Command};
+use std::{io, process::Command};
 
-const GIT_FILE_NAME: &str = "src/git_version.txt";
 const GIT_COMMAND: &str = "git";
 const GIT_ARGUMENTS: &[&str] = &["describe", "--tags", "--dirty", "--always", "--long"];
 const UNKNOWN_VERSION: &str = "unknown";
