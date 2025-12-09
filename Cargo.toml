@@ -7,6 +7,12 @@ version = "0.2.3"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 authors = ["John  Murray <john@murrayfamily.uk>"]
+description = "A simple Zello client for experimenting with Rust and understanding the publishing process."
+keywords = ["zello", "publishing", "audio", "experimentation"]
+repository = "https://github.com/johnmurray/zello-client"
+readme = "README.md"
+categories = ["network-programming"]
+documentation = "https://docs.rs/zello-client"
 
 [dependencies]
 tokio = { version = "1.48", features = ["full"] }
